@@ -216,7 +216,7 @@ def main():
     # N_FFT: defined in loader.py
     feature_size = N_FFT / 2 + 1
 
-    cnn = resnet.ResNet(feature_size, resnet.BasicBlock, [2, 2, 2, 2])
+    cnn = resnet.ResNet(feature_size, resnet.BasicBlock, [2, 2, 2])
     rnn = RNN.RNN(cnn.feature_size, args.hidden_size, args.n_class,
               input_dropout_p=args.dropout, dropout_p=args.dropout,
               n_layers=args.layer_size, bidirectional=args.bidirectional, rnn_cell='gru', variable_lengths=False)
